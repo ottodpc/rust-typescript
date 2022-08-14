@@ -1,7 +1,11 @@
 fn main() {
-    // CONSTANTE_VARIABLE vs let_variable: n'utilise pas la mémoire
-    const CONSTANTE_VARIABLE: i32 = 44;
-    let let_variable_with_suffix_and_casting = 45u16 as i32;
-    println!("{}", CONSTANTE_VARIABLE);
+    // character
+    // codé sur 32bytes; avec une apostrophe de chaque coté. 
+    let character_variable: char = '🚀';
+
+    // chaine de character variable: &str ; String
+    // codé sur 32bytes; avec des guillemets. 
+    let chaine_de_character_variable = "Chaine de character";
+    println!( "character_variable: {}, \n chaine_de_character_variable: {}",  character_variable, chaine_de_character_variable);
 }
  
