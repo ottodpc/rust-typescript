@@ -1,21 +1,7 @@
 fn main() {
-    let a = get_a();
-    // match & pattern binding avec tuple & b n'est pas stocké memoire
-    let ddd = ("a", 22, ("e", 78));
-    match ddd {
-        (a, _, (mut c, d)) if a == "e" => println!("{}", c),
-        _ => print!("default")
-    }
+    // Ownership vs borrowing: avec Ownership/Scope la var de base (a) n'existe plus résolution: b = a.clone() copie de a donc mais avec borrowing "&" b utilise emprête la valeur de a et a existe tjr
+    let mut a = String::from("a");
+    let b = &a;
+    // variable_mutable_sur_a est proprietaire de la valeur de a
+    let variable_mutable_sur_a = &mut a;
 }
- 
-fn get_a() {
-    let a: i32 = 34;
-    if  a > 0 {
-        // return a;
-        "a > 12";
-    } else {
-        "a < 12";
-    }
-}
-
-// match ~= de Switch case
