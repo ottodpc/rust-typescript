@@ -1,45 +1,16 @@
-use std::{collections::HashMap};
-
-// mod check_value {
-//     // by default fn are private in module
-//     pub fn match_value() {
-//         println!("{}", "hello")
-//     }
-// }
-
-mod check_value;
-
+// Oject
+struct Personne {
+    name: String,
+    age: String,
+}
+// 2 types: methods ass. et methods. Les methods associées seront accessible comme les methods static sans l'instanciation de la class
+impl Personne {
+    fn new(name: String, age: String) -> Personne {
+        Personne {  name: name, age: age }
+    }
+}
 /// `main` is a function that is called when the program is executed.
 fn main() {
-    let tableau: [u8; 4] = [3,4,5,2];
-    let tableau2 = [[3,4], [2, 3]];
-    let tuples = (2, "sjl", 22);
-    // vecteur ~tableau & contient qu'un seul type & taille non fixe
-    let un_vecteur = vec![2, 3];
-    println!("{:?}", tableau);
-    println!("{:?}", tableau2[0][1]);
-    println!("{:?}", un_vecteur);
-
-    // let value_get = handle_match_value(un_vecteur.get(2));
-    // println!("value_get: {:?}", value_get);
-    check_value::match_value();
-    
-    // doit être mutable le ve dynamique
-    let mut vecteur = Vec::new();
-    vecteur.push(23u8);
-    // vecteur.push("value"); // la première valeur set le type
-
-    // Hashmap
-    let mut hashmap_var = HashMap::new();
-    hashmap_var.insert("a", "a value");
-    println!("is exist ? {:?}", hashmap_var.contains_key("b"));
+    let Cyprien = Personne::new("Cyprien".to_owned(),"infini".to_owned());
+    println!("Name {}", Cyprien.name);
 }
-
-
-// fn handle_match_value(&mut arg: Option<&I::Output>) -> String {
-//     // * déreference on a que la valeur donc
-//     match *arg {
-//         Some(x) => println!("{}", x),
-//         None => println!("none value"),
-//     }
-// }
