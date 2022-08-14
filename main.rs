@@ -1,4 +1,13 @@
-use std::collections::HashMap;
+use std::{collections::HashMap};
+
+// mod check_value {
+//     // by default fn are private in module
+//     pub fn match_value() {
+//         println!("{}", "hello")
+//     }
+// }
+
+mod check_value;
 
 /// `main` is a function that is called when the program is executed.
 fn main() {
@@ -11,8 +20,9 @@ fn main() {
     println!("{:?}", tableau2[0][1]);
     println!("{:?}", un_vecteur);
 
-    let value_get = handle_match_value(un_vecteur.get(2));
-    println!("value_get: {:?}", value_get);
+    // let value_get = handle_match_value(un_vecteur.get(2));
+    // println!("value_get: {:?}", value_get);
+    check_value::match_value();
     
     // doit être mutable le ve dynamique
     let mut vecteur = Vec::new();
@@ -25,10 +35,11 @@ fn main() {
     println!("is exist ? {:?}", hashmap_var.contains_key("b"));
 }
 
-fn handle_match_value(&mut arg: Option<&I::Output>) -> String {
-    // * déreference on a que la valeur donc
-    match *arg {
-        Some(x) => println!("{}", x),
-        None => println!("none value"),
-    }
-}
+
+// fn handle_match_value(&mut arg: Option<&I::Output>) -> String {
+//     // * déreference on a que la valeur donc
+//     match *arg {
+//         Some(x) => println!("{}", x),
+//         None => println!("none value"),
+//     }
+// }
