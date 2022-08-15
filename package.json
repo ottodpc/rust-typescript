@@ -1,0 +1,22 @@
+{
+  "name": "rust_test",
+  "version": "1.0.0",
+  "description": "<!-- cargo install wasm-pack --> <!-- wasm-pack --target web -->",
+  "main": "index.js",
+  "scripts": {
+    "build-web": "npm run build --prefix www",
+    "dev": "npm run dev --prefix www",
+    "build": "wasm-pack build --target web",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ottodpc/rust-typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ottodpc/rust-typescript/issues"
+  },
+  "homepage": "https://github.com/ottodpc/rust-typescript#readme"
+}

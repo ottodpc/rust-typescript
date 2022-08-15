@@ -1,11 +1,8 @@
-async function init() {
-    const res = await fetch("sum.wasm");
-    buffer = await res.arrayBuffer();
-    const wasm = await WebAssembly.instantiate(buffer);
+import init, { person } from "rust_typescript";
 
-    const sumFunction = wasm.instance.exports.sum;
-    const result = sumFunction(70, 3000);
-    console.log(result);
-  }
-  
-  init();
+init()
+  .then(() => {
+    const p = person("Cyprien");
+    console.log('person', p)
+  })
+  .catch((err) => console.log("err", err));
